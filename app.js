@@ -10,7 +10,6 @@ const userRoute = require('./routes/user');
 
 require('./config/passport')(passport);
 const app = express();
-
 const morgan = require('morgan');
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -33,7 +32,6 @@ app.use(expressLayouts);
 app.use(morgan('dev'));
 
 // SESSION MIDDLEWARE
-
 const store = new MongoStore({  mongoUrl: process.env.MONGO_URI,
     mongoOptions: {
       useNewUrlParser: true,
